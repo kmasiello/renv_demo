@@ -1,0 +1,22 @@
+---
+title: "renv example"
+author: "Katie Masiello"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(survival)
+data(solder, package="survival")
+
+head(solder)
+
+if(packageVersion("survival") == "3.2-7"){cat(paste("Good news, the old code still runs just fiiiiine.", emo::ji("+1")))} else{
+  cat(paste(emo::ji("fire"),"broken code", emo::ji("sad"), "`survival` is at version", packageVersion("survival"),"\nThis pretend code was written when the package was at version 3.2-7"))
+}
+```
